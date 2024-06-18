@@ -21,7 +21,7 @@ ver = 'PY-DOS v0.2'
 print(ver)
 
 while True:
-    cmd1 = input(os.getcwd())
+    cmd1 = input(os.getcwd()
     if cmd1 == 'help':
         print('help: Get the list of commands')
         print('chelp: Get help for chdir')
