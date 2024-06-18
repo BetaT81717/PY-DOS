@@ -1,34 +1,39 @@
 import time
 import os
 
+os.chdir('C:/')
+
 print('Starting PY-DOS...')
 time.sleep(3)
 print('Loading...')
 time.sleep(5)
-ram1 = '144MB'
-rom1 = '1.44GB'
-print('RAM' + ram1)
+print('Checking RAM...')
 time.sleep(1)
 print('OK')
 time.sleep(0.25)
-print('ROM' + rom1)
+print('Checking ROM...')
 time.sleep(1)
 print('OK')
 time.sleep(0.25)
 print('Type "help" to get the list of commands')
 print('CapySoft 2024')
-ver = 'PY-DOS v0.1'
+ver = 'PY-DOS v0.2'
 print(ver)
+
 while True:
-    cmd1 = input('C:/>')
+    cmd1 = input(os.getcwd())
     if cmd1 == 'help':
-        print('help: get the list of commands')
-        print('dosver: version')
-        print('calc: open calculator')
-        print('shutdown: shutdown the system')
+        print('help: Get the list of commands')
+        print('chelp: Get help for chdir')
+        print('dosver: Version')
+        print('calc: Open calculator')
+        print('shutdown: Shutdown the system')
     if cmd1 == 'dosver':
         print(ver)
     if cmd1 == 'calc':
-        print('Sorry, but our developer is not that advanced yet, so we ask you to go to the system directory and run the calc.bat file. We promise to make automatic opening in v0.2')
+       os.startfile('calc.bat')
     if cmd1 == 'shutdown':
+        time.sleep(3)
         quit()
+    if cmd1 == 'chdir':
+        os.chdir(input('Dir: '))
